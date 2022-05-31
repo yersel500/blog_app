@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def users
+  def index
     render 'list_of_users'
   end
 end
