@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    render 'post_per_user'
+    render 'posts_per_user'
   end
 end
