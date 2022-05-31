@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def index
-    render 'posts_per_user'
+    render 'list_of_users'
+  end
+
+  def show
+    render 'post_per_user'
   end
 end
