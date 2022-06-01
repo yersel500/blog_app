@@ -1,24 +1,55 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
+ #  Blog App 📝
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Blog app is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+ 
+ ## Built With
 
-Things you may want to cover:
+ - Ruby
+ - Rails
+ - RSpec
 
-* Ruby version
+ ## Getting Started
 
-* System dependencies
+ To get a local copy up and running follow these simple example steps.
+- git clone  `https://github.com/yersel500/catalog_my_things.git`
 
-* Configuration
+- change to the directory using `cd catalog_my_things`
 
-* Database creation
+- open with your preffered code editor.
 
-* Database initialization
+ ## Running the project
 
-* How to run the test suite
+To run the project,
+- Navigate to the root directory of the project `cd blog_app`
+- run `rails s`
 
-* Services (job queues, cache servers, search engines, etc.)
+To run the tests on the project,
+- Navigate to the root directory of the project `cd blog_app` in your terminal.
+- run `bundle exec rspec`
+-The test results will be displayed on the terminal.
 
-* Deployment instructions
+ ## Authors:
 
-* ...
+### 👤 Yersel Hurtado
+- GitHub: [@yersel500](https://github.com/yersel500/) 
+- Twitter: [@YerselHurtado](https://twitter.com/YerselHurtado)
+- LinkedIn: [Yersel Hurtado](https://www.linkedin.com/in/yersel-hurtado/) 
+
+ ## 🤝 Contributing
+
+ Contributions, issues, and feature requests are welcome!
+
+ Feel free to check the [issues page](https://github.com/yersel500/blog_app/issues).
+
+ ## Show your support
+
+ Give a ⭐️ if you like this project!
+
+ ## Acknowledgments
+
+ - Microverse: [microverse community](https://github.com/microverseinc)
+
+ ## 📝 License
+
+ This project is [MIT](./MIT.md) licensed.
