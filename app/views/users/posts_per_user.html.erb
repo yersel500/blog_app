@@ -1,1 +1,5 @@
 <h1>Here is the lists of post per user</h1>
+<% @user.posts.each do |post| %>
+  <a href="<%= @user.id %>/posts"><%= post.title%></a>
+  <%= post.text%>
+<% end %>
