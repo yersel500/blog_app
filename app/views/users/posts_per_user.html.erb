@@ -10,3 +10,18 @@
   </li>
 <% end %>
 <h4><a href="<%= @user.id %>/posts">See all posts</a></h4>
+<h4><a href="<%= @user.id %>/new">Write new article</a></h4>
+<h2>New Post</h2>
+<%= form_with model: [ @user, @user.posts.build ] do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text%>
+  </div>
+  <div>
+    <%= form.submit "Submit Post" %>
+  </div>
+<% end %>
