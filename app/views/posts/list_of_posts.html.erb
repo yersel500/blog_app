@@ -1,1 +1,17 @@
 <h1>Here is the list of posts</h1>
+<h2>User: <%= @users.find(params[:user_id]).name %></h2>
+<h2>Number of posts: <%= @users.find(params[:user_id]).posts.count %></h2>
+<% @posts.each do |post| %>
+  <li>
+    <a href="posts/<%= post.id %>"><%= post.title %></a>
+    <%= post.text %>
+    <div>
+      <p>Comments: <%= post.comments.count %> Likes: <%= post.likes.count %></p>
+    </div>
+  </li>
+  <div>
+    <% post.comments.each do |comment| %>
+      <p><strong>User:</strong> <%= @users.find(comment.user_id).name %> <strong>Comment:</strong> <%= comment.text %></p>
+    <% end %>
+  </div>
+<% end %>
