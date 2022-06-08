@@ -8,3 +8,13 @@
     Comment: <%= comment.text %>
   </p>
 <% end %>
+<h2>New Comment</h2>
+<%= form_with url: post_comments_path, model: [ @post, @post.comments.build ] do |form| %>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </div>
+  <div>
+    <%= form.submit "Comment" %>
+  </div>
+<% end %>
