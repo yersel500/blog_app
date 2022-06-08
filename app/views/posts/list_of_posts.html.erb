@@ -1,5 +1,13 @@
 <h1>Here is the list of posts</h1>
 <% @posts.each do |post| %>
-  <a href="posts/<%= post.id %>"><%= post.title%></a>
-  <%= post.text%>
+  <li>
+    <a href="posts/<%= post.id %>"><%= post.title %></a>
+    <%= post.text %>
+    <li>
+      <% post.comments.each do |comment| %>
+        <%= @users.find(comment.user_id).name %>
+        <%= comment.text %>
+      <% end %>
+    </li>
+  </li>
 <% end %>
