@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @users = User.all
+    @post = User.find(params[:user_id]).posts.find(params[:id])
     render 'post'
   end
 end

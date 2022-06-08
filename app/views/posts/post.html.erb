@@ -1,1 +1,10 @@
-<h1>Here is specific post!</h1>
+<h1>Post by <%= @users.find(params[:user_id]).name %></h1>
+<h2>Comments: <%= @post.comments.count %> Likes: <%= @post.likes.count %></h2>
+<%= @post.title%>
+<%= @post.text%>
+<% @post.comments.each do |comment| %>
+  <p>
+    User: <%= @users.find(comment.user_id).name %>
+    Comment: <%= comment.text %>
+  </p>
+<% end %>

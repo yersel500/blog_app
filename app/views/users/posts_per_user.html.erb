@@ -1,5 +1,12 @@
 <h1>Here is the lists of post per user</h1>
+<h2>User: <%= @user.name %></h2>
+<h2>Number of posts: <%= @user.posts.count %></h2>
+<h3>Bio</h3>
+<p><%= @user.bio %></p>
 <% @user.posts.each do |post| %>
-  <a href="<%= @user.id %>/posts"><%= post.title%></a>
-  <%= post.text%>
+  <li>
+    <a href="<%= @user.id %>/posts"><%= post.title%></a>
+    <%= post.text%>
+  </li>
 <% end %>
+<h4><a href="<%= @user.id %>/posts">See all posts</a></h4>
