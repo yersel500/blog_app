@@ -10,7 +10,6 @@
   </li>
 <% end %>
 <h4><a href="<%= @user.id %>/posts">See all posts</a></h4>
-<h4><a href="<%= @user.id %>/new">Write new article</a></h4>
 <h2>New Post</h2>
 <%= form_with model: [ @user, @user.posts.build ] do |form| %>
   <div>
