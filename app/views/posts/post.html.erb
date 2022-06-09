@@ -1,4 +1,9 @@
 <h1>Post by <%= @users.find(params[:user_id]).name %></h1>
+<%= form_with url: post_likes_path, model: [ @post, @post.likes.build ] do |form| %>
+  <div>
+    <%= form.submit "Like" %>
+  </div>
+<% end %>
 <h2>Comments: <%= @post.comments.count %> Likes: <%= @post.likes.count %></h2>
 <%= @post.title%>
 <%= @post.text%>
@@ -7,4 +12,14 @@
     User: <%= @users.find(comment.user_id).name %>
     Comment: <%= comment.text %>
   </p>
+<% end %>
+<h2>New Comment</h2>
+<%= form_with url: post_comments_path, model: [ @post, @post.comments.build ] do |form| %>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </div>
+  <div>
+    <%= form.submit "Comment" %>
+  </div>
 <% end %>
