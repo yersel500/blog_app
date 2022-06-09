@@ -5,8 +5,13 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:id])
-    @comment = @post.comments.create(comment_params)
-    redirect_to user_post_path(user_id: params[:user_id], id: @post.id)
+    @comment = @post.comments.new(comment_params)
+    if @comment.save
+      redirect_to user_post_path(user_id: params[:user_id], id: @post.id)
+    else
+      flash[:alert] = 'Could not save the comment'
+      redirect_to user_posts_path(user_id: params[:user_id], id: @post.id)
+    end
   end
 
   private
