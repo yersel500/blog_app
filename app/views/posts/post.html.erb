@@ -18,3 +18,8 @@
     <%= form.submit "Comment" %>
   </div>
 <% end %>
+<%= form_with url: post_likes_path, model: [ @post, @post.likes.build ] do |form| %>
+  <div>
+    <%= form.submit "Like" %>
+  </div>
+<% end %>
