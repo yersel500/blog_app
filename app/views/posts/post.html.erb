@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <strong><%= msg %></strong>
+  </div>
+<% end %>
 <h1>Post by <%= @users.find(params[:user_id]).name %></h1>
 <%= form_with url: post_likes_path, model: [ @post, @post.likes.build ] do |form| %>
   <div>

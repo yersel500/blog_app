@@ -11,7 +11,12 @@
 <% end %>
 <h4><a href="<%= @user.id %>/posts">See all posts</a></h4>
 <h2>New Post</h2>
-<%= form_with model: [ @user, @user.posts.build ] do |form| %>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <strong><%= msg %></strong>
+  </div>
+<% end %>
+<%= form_with model: [ @user, @user.posts.build ], local: true do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
