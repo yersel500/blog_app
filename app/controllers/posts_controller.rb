@@ -19,8 +19,11 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
+    @post.comments_counter = 0
+    @post.likes_counter = 0
 
     if @post.save
+      flash[:alert] = 'Post was saved succesfully'
       redirect_to user_post_path(user_id: @user.id, id: @post.id)
     else
       flash[:alert] = 'Could not save the post'
