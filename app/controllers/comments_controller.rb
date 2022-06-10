@@ -8,10 +8,8 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     flash[:alert] = if @comment.save
                       'Comment was created successfully'
-                    # redirect_to user_post_path(user_id: params[:user_id], id: @post.id)
                     else
                       'Could not save the comment'
-                      # redirect_to user_posts_path(user_id: params[:user_id], id: @post.id)
                     end
     redirect_to user_post_path(user_id: params[:user_id], id: @post.id)
   end
