@@ -1,8 +1,16 @@
+<nav class='navbar'>
+  <%=  link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn-bar' %>
+  <%=  link_to "Update", edit_user_registration_path, data: { turbo_method: :get }, class: 'btn-bar' %>
+</nav>
 <h1>Here is the list of users!</h1>
 <% @users.each do |user| %>
-  <li>
-    <img src='https://www.iconspng.com/images/young-user-icon.jpg' alt='User image'>
-    <a href="users/<%= user.id %>">User: <%= user.name %></a>
-    <p>Posts: <%= user.posts.count %></p>
+  <li class='user-list'>
+    <div class='img-container'>
+      <img src='https://www.iconspng.com/images/young-user-icon.jpg' alt='User image'>
+    </div>
+    <div class='user-description'>
+      <a href="users/<%= user.id %>">User: <%= user.name %></a>
+      <p>Posts: <%= user.posts.count %></p>
+    </div>
   </li>
 <% end %>
