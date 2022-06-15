@@ -1,10 +1,13 @@
 <h1>Here is the lists of post per user</h1>
+<div class='img-container'>
+  <img class="user-image" src='https://www.iconspng.com/images/young-user-icon.jpg' alt='User image'>
+</div>
 <h2>User: <%= @user.name %></h2>
 <h2>Number of posts: <%= @user.posts.count %></h2>
 <h3>Bio</h3>
 <p><%= @user.bio %></p>
 <% @user.posts.each do |post| %>
-  <li>
+  <li class="user-post">
     <a href="<%= @user.id %>/posts"><%= post.title%></a>
     <%= post.text%>
   </li>
