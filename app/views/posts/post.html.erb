@@ -21,11 +21,11 @@
     Comment: <%= comment.text %>
   </p>
   <% if can? :destroy, comment %>
-    <%= button_to 'Delete', user_post_comment_path(user_id: @user.id,id: @post.id, comment_id: comment.id ), method: :delete, class: 'delete black-border' %>
+    <%= button_to 'Delete', user_post_comment_path(user_id: @user.id,post_id: @post.id, id: comment.id ), method: :delete, class: 'delete black-border' %>
   <% end %>
 <% end %>
 <h2>New Comment</h2>
-<%= form_with url: post_comments_path, model: [ @user, @post, @post.comments.build ] do |form| %>
+<%= form_with url: post_comments_url(user_id: @user.id, post_id: @post.id), model: [ @post, @post.comments.build ] do |form| %>
   <div>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
