@@ -79,4 +79,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Devise gem
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
-gem "cancancan", "~> 3.3"
+gem 'cancancan', '~> 3.3'
