@@ -19,13 +19,12 @@ RSpec.describe 'user_index', type: :feature do
 
   it 'See the number of post of each user' do
     user = User.all.first
-    expect(page.html).to include('user-posts')
     expect(page).to have_content("Posts: #{user.posts_counter}")
   end
 
   it 'should redirect to user show page when click on a user' do
     user = User.all.first
     click_link(user.name)
-    expect(page.current_path).to eql(user_path(id: user.id))
+    expect(page.current_path).to eql(user_show_path(id: user.id))
   end
 end
